@@ -4,7 +4,8 @@ from langchain_core.prompts import PromptTemplate
 from langchain_community.chat_message_histories import ChatMessageHistory
 
 # Configure Gemini
-genai.configure(api_key="AIzaSyDiuwhNBJruLyuiSJMss09DecWZeJOFqy8")
+api_key = st.secrets["GEMINI_API_KEY"]
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 # Initialize chat history
